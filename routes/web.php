@@ -12,7 +12,9 @@
 */
 
 
-
+Route::get('/run', function(){
+    return view('project.competition.run');
+});
 Route::get('/admin', function(){
     echo "Hello Admin";
 })->middleware('admin');
@@ -24,10 +26,12 @@ Route::get('/Freelancer', function(){
 Route::get('/client', function(){
     return view('client');
 })->middleware('client');
-
-Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+Route::group(['middleware' => ['auth']], function () { 
+
 Route::get('/projects', 'ProjectsController@index');
 Route::get('/projects/posted', 'ProjectsController@posted');
 Route::get('/projects/create', 'ProjectsController@create');
@@ -49,3 +53,4 @@ Route::post('post-competition', 'CompetitionController@store')->name('store');
 Route::patch('/submit-project/{project}', 'ProjectsController@submit')->name('submit');
 
 Route::resource('projects','ProjectsController');
+});

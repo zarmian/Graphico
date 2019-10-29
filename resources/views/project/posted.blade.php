@@ -41,7 +41,9 @@
                                                         </div>
                                                         <div class="table-col project-bids-col">{{$project->no_bids}}                                                            <span>Bids</span></div>
                                                         <div class="table-col project-budget-col">
-                                                            <span>Budget</span>{{$project->budget}}                                                        </div>
+                                                                
+                                                            <span>Budget</span>{{$project->budget}}
+                                                                                                                  </div>
                                                         <div class="table-col project-open-col">
                                                             <span>Open on</span>{{ \Carbon\Carbon::parse($project->created_at)->format('j F, Y') }}                                                        </div>
                                                         <div class="table-col project-status-col">{{$project->status}}</div>
