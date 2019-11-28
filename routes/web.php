@@ -54,3 +54,10 @@ Route::patch('/submit-project/{project}', 'ProjectsController@submit')->name('su
 
 Route::resource('projects','ProjectsController');
 });
+
+Route::group(['prefix' => 'api'], function () use ($router) {
+    Route::get('getPlans', 'PlansController@getPlans');
+    Route::get('generatePayLink/{productId}', 'PlansController@generatePayUrl');
+    Route::get('thanks/', 'PlansController@thankYouMessage');
+});
+Route::get('plans', 'PlansController@getPlansWeb');
