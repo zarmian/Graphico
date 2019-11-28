@@ -16,7 +16,7 @@ Route::get('/run', function(){
     return view('project.competition.run');
 });
 Route::get('/admin', function(){
-    echo "Hello Admin";
+    echo "Hi Admin";
 })->middleware('admin');
  
 Route::get('/Freelancer', function(){

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<canvas id="tutorial" width="150" height="150"></canvas>
+<img src="/image.php" alt="Image created by a PHP script" width="200" height="80">
 
 
 
@@ -13,8 +13,3 @@
 
 
                     @endsection
-
-
-@section('scripts')
-
-@endsection
