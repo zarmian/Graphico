@@ -4,6 +4,7 @@
 <link rel='stylesheet' id='datepicker-css-css'  href='/css/bootstrap-datetimepicker.min-ver=4.9.3.css' type='text/css' media='all' />
 <link rel='stylesheet' id='bootstrap-css'  href='/css/bootstrap-header.css' type='text/css' media='all' />
 <link rel='stylesheet' id='font-icon-css'  href='/assets/css/font-awesome.min-ver=1.8.10.css' type='text/css' media='all' />
+<<<<<<< HEAD
 
 
 
@@ -11,6 +12,25 @@
     <title>@yield('title','GraphiCo')</title>
 </head>
     <body class="page-template" >
+=======
+<script type="text/javascript">
+    window.onload = function draw() {
+        var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        ctx.fillRect(10, 10, 50, 50);
+
+        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+        ctx.fillRect(30, 30, 50, 50);
+      }
+    }
+  </script>
+    <title>@yield('title','GraphiCo')</title>
+</head>
+    <body class="page-template" onload="draw();">
+>>>>>>> old_a/master
         @include('layouts.header')
 
         @if(session('success'))

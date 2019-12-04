@@ -52,8 +52,13 @@ return [
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
+<<<<<<< HEAD
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
+=======
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+>>>>>>> old_a/master
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,

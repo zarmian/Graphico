@@ -9,12 +9,20 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+<<<<<<< HEAD
         "encore/laravel-admin": "^1.7",
         "fideloper/proxy": "^4.0",
         "laravel-admin-ext/media-manager": "^1.1",
         "laravel/framework": "^5.5",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/tinker": "^1.0"
+=======
+        "fideloper/proxy": "^4.0",
+        "intervention/image": "^2.5",
+        "laravel/framework": "^5.5",
+        "laravel/tinker": "^1.0",
+        "nmcteam/image-with-text": "~2.0"
+>>>>>>> old_a/master
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -34,7 +42,15 @@
         }
     },
     "autoload": {
+<<<<<<< HEAD
         "psr-4": {
+=======
+        "psr-0": {
+            "NMC": "src"
+        },
+        "psr-4": {
+
+>>>>>>> old_a/master
             "App\\": "app/"
         },
         "classmap": [

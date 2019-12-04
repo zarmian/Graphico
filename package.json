@@ -17,8 +17,11 @@
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0"
+<<<<<<< HEAD
     },
     "dependencies": {
         "tui-image-editor": "^3.7.0"
+=======
+>>>>>>> old_a/master
     }
 }
