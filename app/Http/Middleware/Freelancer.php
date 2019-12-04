@@ -22,7 +22,7 @@ class Freelancer
         return redirect('/client');
     }
     else {
-        return redirect('/admin');
+        return redirect('/login');
     }
 }
 }

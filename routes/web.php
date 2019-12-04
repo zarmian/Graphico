@@ -16,8 +16,8 @@ Route::get('/run', function(){
     return view('project.competition.run');
 });
 Route::get('/admin', function(){
-    echo "Hi Admin";
-})->middleware('admin');
+    return view ('admin/auth/menu');
+});
  
 Route::get('/Freelancer', function(){
     return view('freelancer');
@@ -31,6 +31,11 @@ Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () { 
+
+
+Route::post('send-message','WorkspaceController@store');
+Route::get('/show/{chat}',  'WorkspaceController@show');
+Route::get('json','WorkspaceController@jsonResponse');
 
 Route::get('/projects', 'ProjectsController@index');
 Route::get('/projects/posted', 'ProjectsController@posted');

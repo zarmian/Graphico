@@ -40,8 +40,11 @@
                     <Button class="normal-btn primary-bg-color" action="POST" data-project-id="{{$project->id}}">APPLY</Button>
                     </form>
                     @elseif(Auth::user()->role==3)
-                    <a href="{{$project->id}}/edit" class="normal-btn primary-bg-color">Edit</a>
-                    
+                      @if($check)
+                      <a href="workspace/{{$project->id}}"class="normal-btn primary-bg-color" target="">Workspace</a>
+                      @else
+                     <a href="{{$project->id}}/edit" class="normal-btn primary-bg-color">Edit</a>
+                      @endif
                     @endif
 	                </div>
             </div>
