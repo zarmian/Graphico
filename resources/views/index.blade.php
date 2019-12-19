@@ -13,11 +13,15 @@
             <th>Checkout</th>
         </tr>
         </thead>
+
         @foreach((array)$planData as $singlePlan)
             <tr>
                 <td>{{$singlePlan['productName']}}</td>
                 <td>{{$singlePlan['productPrice']}}</td>
-                <td><a class="btn btn-primary btn-sm" href="{{url('/') . $singlePlan['checkoutUrl']}}?userId=1&userEmail=bilafaisal321@gmail.com">Checkout</a></td>
+                @if(isset($singlePlan['checkoutUrl'])) {
+                    <td><a class="btn btn-primary btn-sm" href="{{url('/') . $singlePlan['checkoutUrl']}}?userId=1&userEmail=bilafaisal321@gmail.com">Checkout</a></td>
+                }
+                @endif   
             </tr>
         @endforeach
     </table>

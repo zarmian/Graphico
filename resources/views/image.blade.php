@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <title>Image Manipulation</title>
+    <title>Competition</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -9,7 +9,7 @@
 <body>
 
 <div class="container">
-    <h3 class="jumbotron" style="text-align: center">Image Manipulation</h3>
+    <h3 class="jumbotron" style="text-align: center">Competition</h3>
     <form method="post" id="FrmImgUpload" action="javascript:void(0)" enctype="multipart/form-data">
         @csrf
 
@@ -32,146 +32,142 @@
         </div>
         <div id="button_panel" style="display: none">
             <div id="main_function_panel">
-                <button type="button" class="btn btn-primary" id="rotateBtn" style="float: left; background: yellowgreen">Rotate Image</button>
-                <button type="button" class="btn btn-primary" style="float: left; background: yellowgreen" id="flip">Flip Image</button>
-                <button type="button" class="btn btn-primary" onclick="blurb()" style="float: left; background: #2ecc71">Blur Image
+                <button type="button" class="btn btn-primary" id="rotateBtn" style="float: left; "><img src="icons/refresh.png" ></button>
+                <button type="button" class="btn btn-primary" style="float: left;" id="flip"><img src="icons/flip.png"></button>
+                <button type="button" class="btn btn-primary" onclick="blurb()" style="float: left; "><img src="icons/blur.png" >
                 </button>
-                <button type="button" class="btn btn-primary" style="float: left; background: #2ecc71" id="colorizeBtn">Colorize Image</button>
-                <button type="button" class="btn btn-primary" onclick="pixelate()" style="float: left; background: #2ecc71">Pixelate
+                <button type="button" class="btn btn-primary" style="float: left; " id="colorizeBtn"><img src="icons/paint-palette-and-brush.png" ></button>
+                <button type="button" class="btn btn-primary" onclick="pixelate()" style="float: left; ">Pixelate
                     Image
                 </button>
 
 
-                <button type="button" class="btn btn-primary" id="textBtn" style="float: left; background: #2ecc71">Add Text</button>
-                <button type="button" class="btn btn-primary" id="cropBtn" style="float: left; background: #2ecc71">Crop Image
+                <button type="button" class="btn btn-primary" id="textBtn" style="float: left; "><img src="icons/text.png" ></button>
+                <button type="button" class="btn btn-primary" id="cropBtn" style="float: left; "><img src="icons/crop-tool-button.png" >
                 </button>
 
 
-                <button type="button" class="btn btn-primary" style="float: left; background: #1fbdbd" id="imageSettingBtn">Image
-                    Setting
+                <button type="button" class="btn btn-primary" style="float: left; " id="imageSettingBtn"><img src="icons/settings (2).png" >
                 </button>
             </div>
             <div id="rotation_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="rotateBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main
+                        style="float: left; "><img src="icons/left-arrow.png">
                 </button>
                 <br><br>
-                <button type="button" class="btn btn-primary" onclick="rotate90()" style="float: left; background: yellowgreen" id="flip">Rotate 90</button>
-                <button type="button" class="btn btn-primary" onclick="rotate180()" style="float: left; background: yellowgreen" id="flip">Rotate 180</button>
-                <button type="button" class="btn btn-primary" onclick="rotate270()" style="float: left; background: yellowgreen"
+                <button type="button" class="btn btn-primary" onclick="rotate90()" style="float: left; " id="flip"><img src="icons/right-angle-of-90-degrees.png" ></button>
+                <button type="button" class="btn btn-primary" onclick="rotate180()" style="float: left; " id="flip"><img src="icons/180-degrees-angle.png" ></button>
+                <button type="button" class="btn btn-primary" onclick="rotate270()" style="float: left; "
                         id="flip">Rotate 270
                 </button>
-                <button type="button" class="btn btn-primary" onclick="rotate360()" style="float: left; background: yellowgreen; display: none"
-                        id="flip">Rotate 360
+                <button type="button" class="btn btn-primary" onclick="rotate360()" style="float: left;  display: none"
+                        id="flip"><img src="icons/angle.png" >
                 </button>
             </div>
             <div id="flip_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="flipBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main
+                        style="float: left; "><img src="icons/left-arrow.png">
                 </button>
                 <br><br>
-                <button type="button" class="btn btn-primary" onclick="flipVertical()" style="float: left; background: yellowgreen" id="flip">Flip Vertical</button>
-                <button type="button" class="btn btn-primary" onclick="flipHorizontal()" style="float: left; background: yellowgreen"
-                        id="flip">Flip Horizontal
+                <button type="button" class="btn btn-primary" onclick="flipVertical()" style="float: left; " id="flip"><img src="icons/flip.png" ></button>
+                <button type="button" class="btn btn-primary" onclick="flipHorizontal()" style="float: left; "
+                        id="flip"><img src="icons/flip (1).png" >
                 </button>
             </div>
             <div id="colorize_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="colorizeBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main
+                        style="float: left; "><img src="icons/left-arrow.png">
                 </button>
                 <br><br>
-                <button type="button" class="btn btn-primary" onclick="colorizeBlue()" style="float: left; background: #1d8bdf">Bluish
-                    Image
+                <button type="button" class="btn btn-primary" onclick="colorizeBlue()" style="float: left; "><img src="icons/paintbrush.png" >
                 </button>
-                <button type="button" class="btn btn-primary" onclick="colorizeGreen()" style="float: left; background: forestgreen">
-                    Greenish Image
+                <button type="button" class="btn btn-primary" onclick="colorizeGreen()" style="float: left; ">
+                    <img src="icons/paintbrush (2).png" >
                 </button>
-                <button type="button" class="btn btn-primary" onclick="colorizeRed()" style="float: left; background: indianred">
-                    Redish Image
-                </button>
+                <button type="button" class="btn btn-primary" onclick="colorizeRed()" style="float: left; ">
+                    <img src="icons/paintbrush (1).png" >                </button>
                 <button type="button" class="btn btn-primary" onclick="colorizeGreyScale()"
-                        style="float: left; background: indianred">Grey Scale Image
+                        style="float: left; "><img src="icons/paintbrush (3).png" >
                 </button>
             </div>
             <div id="imageSetting_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="imageSettingBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main
+                        style="float: left; "><img src="icons/left-arrow.png">
                 </button>
                 <br><br>
-                <button type="button" class="btn btn-primary" style="float: left; background: #1d8bdf" id="sharpenBtn">Sharpen Image
+                <button type="button" class="btn btn-primary" style="float: left; " id="sharpenBtn">Sharpen Image
                 </button>
-                <button type="button" class="btn btn-primary" style="float: left; background: forestgreen" id="brightnessBtn">
-                    Brightness Image
+                <button type="button" class="btn btn-primary" style="float: left; " id="brightnessBtn">
+                    <img src="icons/contrast.png" >
                 </button>
-                <button type="button" class="btn btn-primary" style="float: left; background: indianred" id="contrastBtn">Contrast
+                <button type="button" class="btn btn-primary" style="float: left; " id="contrastBtn">Contrast
                     Image
                 </button>
-                <button type="button" class="btn btn-primary" style="float: left; background: indianred" id="gammaBtn">Gamma Image
+                <button type="button" class="btn btn-primary" style="float: left; " id="gammaBtn">Gamma Image
                 </button>
             </div>
             <div id="sharpen_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="sharpenBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main
+                        style="float: left; "><img src="icons/left-arrow.png">
                 </button>
                 <br><br>
-                <button type="button" class="btn btn-primary" onclick="sharpenLow()" style="float: left; background: #1d8bdf">Low
-                    Sharpen
+                <button type="button" class="btn btn-primary" onclick="sharpenLow()" style="float: left; "><img src="icons/icon.png" >
                 </button>
-                <button type="button" class="btn btn-primary" onclick="sharpenMedium()" style="float: left; background: forestgreen">
+                <button type="button" class="btn btn-primary" onclick="sharpenMedium()" style="float: left; ">
                     Medium Sharpen
                 </button>
-                <button type="button" class="btn btn-primary" onclick="sharpenHigh()" style="float: left; background: indianred">High
+                <button type="button" class="btn btn-primary" onclick="sharpenHigh()" style="float: left; ">High
                     Sharpen
                 </button>
             </div>
             <div id="brightness_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="brightnessBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main
+                        style="float: left; "><img src="icons/left-arrow.png">
                 </button>
                 <br><br>
-                <button type="button" class="btn btn-primary" onclick="brightnessLow()" style="float: left; background: #1d8bdf">Low
+                <button type="button" class="btn btn-primary" onclick="brightnessLow()" style="float: left; ">Low
                     Brightness
                 </button>
                 <button type="button" class="btn btn-primary" onclick="brightnessMedium()"
-                        style="float: left; background: forestgreen">Medium Brightness
+                        style="float: left; ">Medium Brightness
                 </button>
-                <button type="button" class="btn btn-primary" onclick="brightnessHigh()" style="float: left; background: indianred">
+                <button type="button" class="btn btn-primary" onclick="brightnessHigh()" style="float: left; ">
                     High Brightness
                 </button>
             </div>
             <div id="contrast_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="contrastBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main
+                        style="float: left; "><img src="icons/left-arrow.png">
                 </button>
                 <br><br>
-                <button type="button" class="btn btn-primary" onclick="contrastLow()" style="float: left; background: #1d8bdf">Low
+                <button type="button" class="btn btn-primary" onclick="contrastLow()" style="float: left; ">Low
                     Contrast
                 </button>
-                <button type="button" class="btn btn-primary" onclick="contrastMedium()" style="float: left; background: forestgreen">
+                <button type="button" class="btn btn-primary" onclick="contrastMedium()" style="float: left; ">
                     Medium Contrast
                 </button>
-                <button type="button" class="btn btn-primary" onclick="contrastHigh()" style="float: left; background: indianred">High
+                <button type="button" class="btn btn-primary" onclick="contrastHigh()" style="float: left; ">High
                     Contrast
                 </button>
             </div>
             <div id="gamma_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="gammaBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main
+                        style="float: left; "><img src="icons/left-arrow.png">
                 </button>
                 <br><br>
-                <button type="button" class="btn btn-primary" onclick="gammaLow()" style="float: left; background: #1d8bdf">Low
+                <button type="button" class="btn btn-primary" onclick="gammaLow()" style="float: left; ">Low
                     Gamma
                 </button>
-                <button type="button" class="btn btn-primary" onclick="gammaMedium()" style="float: left; background: forestgreen">
+                <button type="button" class="btn btn-primary" onclick="gammaMedium()" style="float: left; ">
                     Medium Gamma
                 </button>
-                <button type="button" class="btn btn-primary" onclick="gammaHigh()" style="float: left; background: indianred">High
+                <button type="button" class="btn btn-primary" onclick="gammaHigh()" style="float: left; ">High
                     Gamma
                 </button>
             </div>
             <div id="text_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="textBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main
+                        style="float: left; "><img src="icons/left-arrow.png">
                 </button>
                 <br><br>
                 <input type="text" placeholder="Input text" id="input_text" style="float: left;"/><br><br>
@@ -204,9 +200,9 @@
             </div>
             <div id="crop_group" style="display: none">
                 <button type="button" class="btn btn-primary" id="cropBackBtn"
-                        style="float: left; background: yellowgreen">Back To Main</button>
+                        style="float: left; "><img src="icons/left-arrow.png"></button>
                 <br><br>
-                <button type="button" class="btn btn-primary" style="float: left; background: #1d8bdf" id="applyCrop">Apply Crop</button>
+                <button type="button" class="btn btn-primary" style="float: left; " id="applyCrop">Apply Crop</button>
             </div>
         </div>
         </br></br></br>
@@ -454,7 +450,8 @@
                 console.log(data);
                 if (data)
                 {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + data.src);
+                    
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + data.src).attr('src');
 
                 }
             },
@@ -480,7 +477,8 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + data.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -505,7 +503,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -530,7 +528,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -555,7 +553,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src');
                 }
             },
             Error: function (response) {
@@ -577,7 +575,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src');
                 }
             },
             Error: function (response) {
@@ -602,7 +600,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src');
                 }
             },
             Error: function (response) {
@@ -625,7 +623,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src');
                 }
             },
             Error: function (response) {
@@ -648,7 +646,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -671,7 +669,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -694,7 +692,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -717,7 +715,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -740,7 +738,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -763,7 +761,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -786,7 +784,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -809,7 +807,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -832,7 +830,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -855,7 +853,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -878,7 +876,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -901,7 +899,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -924,7 +922,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -947,7 +945,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -970,7 +968,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -993,7 +991,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -1021,7 +1019,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {
@@ -1050,7 +1048,7 @@
             data: fd,
             success: function (response) {
                 if (response) {
-                    $('#ImgOri').attr('src', "{{ url('/') }}" + '/' + response.src);
+                    $('#ImgOri').load("{{ url('/') }}" + '/' + response.src).attr('src')
                 }
             },
             Error: function (response) {

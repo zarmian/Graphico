@@ -14,16 +14,10 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-<<<<<<< HEAD
         
         $this->middleware('Freelancer');
         $this->middleware('client');
         
-=======
-        $this->middleware('admin');
-        $this->middleware('Freelancer');
-        $this->middleware('client');
->>>>>>> old_a/master
     }
 
     /**
@@ -33,10 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        return view('welcome');
-=======
         return view('imageManipulation');
->>>>>>> old_a/master
     }
 }

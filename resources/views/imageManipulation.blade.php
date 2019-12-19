@@ -1,6 +1,6 @@
 <div>hi</div>
 
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('style')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -12,9 +12,9 @@
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
     @endif
-    <div class="container" style="background: #2ecc71">
-{{--//action="{{ url('imageManipulation') }}"--}}
-        <form  method="post" enctype="multipart/form-data">
+    <div class="container" style="background: #2ecc71"
+>
+        <form  method="post" enctype="multipart/form-data" action="{{ url('intervention-ajax-image-upload') }}">
             <div class="form-group">
                 <input type="file" name="profile_image" id="exampleInputImage" class="image" required>
             </div>

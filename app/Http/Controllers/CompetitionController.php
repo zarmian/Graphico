@@ -64,8 +64,13 @@ class CompetitionController extends Controller
         
         
         }
-        
-        return redirect()->action('ProjectsController@posted');
+        $plansData = [
+            [
+                'productName' => 'NA',
+                'productPrice' => 'NA'
+            ]
+        ];
+        return view('index')->with('planData', $plansData);
     }
 
     /**

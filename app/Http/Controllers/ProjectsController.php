@@ -83,8 +83,12 @@ class ProjectsController extends Controller
         $bids=DB::select('select * from bid where p_id = ?',[$project->id]);
         $check=assign::where('p_id', '=', "$project->id")
         ->exists();
+        $id=Auth::user()->id;
+        $check1=Bid::where('p_id', '=', "$project->id")
+        ->where('u_id', '=', "$id")
+        ->exists();
         
-        return view('project.show',compact('projects', 'competitions','users','counts','bids','check'));
+        return view('project.show',compact('projects', 'competitions','users','counts','bids','check','check1'));
     }
 
     
@@ -213,8 +217,8 @@ class ProjectsController extends Controller
         foreach($projects as $project1)
         $users=DB::select('select * from users where id = ?',[$project1->u_id]);
         $assigns=DB::select('select * from assign where p_id = ?',[$project1->id]);
-
-        return view('workspace', compact('users','projects','assigns') );
+        $chat=DB::select('select * from chat where p_id = ?',[$project1->id]);
+        return view('workspace', compact('users','projects','assigns','chat') );
     }
     public function submit(Request $request, Project $project)
     {

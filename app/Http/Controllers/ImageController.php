@@ -16,17 +16,17 @@ class ImageController extends Controller
 
     public $imageLibrary;
 
-    public function AjaxIndex()
+    public function AjaxIndex(Project $project)
     {
 
-        return view('image');
+        return view('image',compact($project));
     }
 
     public function AjaxStore(Request $request)
     {
-        request()->validate([
-            'filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+        // request()->validate([
+        //     'profile_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
 
         if ($request->hasFile('filename')) {
             //get filename with extension
@@ -54,25 +54,25 @@ class ImageController extends Controller
 
             return $data;
         }
-//        if ($files = $request->file('filename')) {
-//
-//
-//            if (!file_exists(public_path('storage/profile_images/'))) {
-//                mkdir(public_path('storage/profile_images/'), 0755);
-//            }
-//            // for save original image
-//            $ImageUpload = Image::make($files);
-//            $originalPath = public_path('/profile_images/');
-//            $ImageUpload->save($originalPath . time() . $files->getClientOriginalName());
-//
-//            $photo = new Photo();
-//            $photo->photo_name = time() . $files->getClientOriginalName();
-//            $photo->save();
-//        }
-//
-//        $image = Photo::latest()->first(['photo_name']);
-//
-//        return Response()->json($image);
+       if ($files = $request->file('filename')) {
+
+
+           if (!file_exists(public_path('storage/profile_images/'))) {
+               mkdir(public_path('storage/profile_images/'), 0755);
+           }
+           // for save original image
+           $ImageUpload = Image::make($files);
+           $originalPath = public_path('/profile_images/');
+           $ImageUpload->save($originalPath . time() . $files->getClientOriginalName());
+
+           $photo = new Photo();
+           $photo->photo_name = time() . $files->getClientOriginalName();
+           $photo->save();
+       }
+
+       $image = Photo::latest()->first(['photo_name']);
+
+       return Response()->json($image);
 
     }
 

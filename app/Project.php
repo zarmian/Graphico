@@ -20,12 +20,9 @@ class Project extends Model
     {
         return $this->hasOne('App\Payment','p_id');
     }
-<<<<<<< HEAD
     public function chat()
     {
         return $this->hasOne('App\Chat','p_id');
     }
-=======
->>>>>>> old_a/master
 }
 

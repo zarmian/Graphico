@@ -10,7 +10,7 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
 ], function (Router $router) {
 
-    $router->get('/admin', 'HomeController@index')->name('admin.home');
+    $router->get('/admin/auth/menu', 'HomeController@index')->name('admin.home');
     $router->resource('projects', ProjectController::class);
     $router->resource('competitions', CompetitionController::class);
     $router->resource('users', WebUserController::class);

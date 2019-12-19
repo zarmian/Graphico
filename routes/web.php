@@ -12,24 +12,18 @@
 */
 
 
-Route::get('/run', function(){
-    return view('project.competition.run');
+Route::get('/image', function(){
+    return view('image');
 });
-Route::get('/admin', function(){
-<<<<<<< HEAD
-    return view ('admin/auth/menu');
-});
-=======
-    echo "Hello Admin";
-})->middleware('admin');
->>>>>>> old_a/master
+// Route::get('/admin', function(){
+//     return view('/admin/competitions');
+// })->middleware('admin');
  
 Route::get('/Freelancer', function(){
     return view('freelancer');
 })->middleware('Freelancer');
  
 Route::get('/client', function(){
-<<<<<<< HEAD
     return view('client');
 })->middleware('client');
 Route::get('/', 'HomeController@index');
@@ -39,12 +33,10 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () { 
 
 
-Route::post('send-message','WorkspaceController@store');
+Route::post('send-message/{project}','WorkspaceController@store');
 Route::get('/show/{chat}',  'WorkspaceController@show');
 Route::get('json','WorkspaceController@jsonResponse');
-=======
-    return view('imageManipulation');
-})->middleware('client');
+});    
 
 
 //Image manipulation routes
@@ -111,8 +103,7 @@ Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () { 
->>>>>>> old_a/master
-
+Route::get('/image/{project}', 'ImageController@index');
 Route::get('/projects', 'ProjectsController@index');
 Route::get('/projects/posted', 'ProjectsController@posted');
 Route::get('/projects/create', 'ProjectsController@create');
@@ -134,15 +125,11 @@ Route::post('post-competition', 'CompetitionController@store')->name('store');
 Route::patch('/submit-project/{project}', 'ProjectsController@submit')->name('submit');
 
 Route::resource('projects','ProjectsController');
-<<<<<<< HEAD
 });
 
 Route::group(['prefix' => 'api'], function () use ($router) {
     Route::get('getPlans', 'PlansController@getPlans');
     Route::get('generatePayLink/{productId}', 'PlansController@generatePayUrl');
     Route::get('thanks/', 'PlansController@thankYouMessage');
+    Route::get('plans', 'PlansController@getPlansWeb');
 });
-Route::get('plans', 'PlansController@getPlansWeb');
-=======
-});
->>>>>>> old_a/master

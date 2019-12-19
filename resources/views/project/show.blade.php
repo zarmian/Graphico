@@ -1,3 +1,4 @@
+
 @extends('layouts.layout')
 
 @section('title','Project')
@@ -40,16 +41,13 @@
                     <Button class="normal-btn primary-bg-color" action="POST" data-project-id="{{$project->id}}">APPLY</Button>
                     </form>
                     @elseif(Auth::user()->role==3)
-<<<<<<< HEAD
                       @if($check)
                       <a href="workspace/{{$project->id}}"class="normal-btn primary-bg-color" target="">Workspace</a>
                       @else
                      <a href="{{$project->id}}/edit" class="normal-btn primary-bg-color">Edit</a>
                       @endif
-=======
-                    <a href="{{$project->id}}/edit" class="normal-btn primary-bg-color">Edit</a>
                     
->>>>>>> old_a/master
+                    
                     @endif
 	                </div>
             </div>
@@ -89,8 +87,12 @@
                 <span>
                     Member since: {{Auth::user()->create_at}}                </span>
             </div>
+            
             @endforeach
-        
+            
+        @if($check1)
+            <a class=" normal-btn primary-bg-color" href="{{url("/image/$project->id")}}">Perform competition</a>
+            @endif
          @else
          
              @if(!$check)
